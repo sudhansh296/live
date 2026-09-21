@@ -1,0 +1,39 @@
+# Secrets (never commit)
+.env
+.env.*
+!.env.example
+*.jks
+*.keystore
+*.p12
+google-services.json
+*service-account*.json
+*firebase-adminsdk*.json
+server/secrets/
+
+# Node
+node_modules/
+npm-debug.log*
+
+# Android / Gradle
+local.properties
+.gradle/
+build/
+.cxx/
+captures/
+.idea/
+*.apk
+*.aab
+*.idsig
+*.hprof
+
+# Uploads (user data)
+server/uploads/
+
+# Logs / OS
+*.log
+logs/
+.DS_Store
+Thumbs.db
+
+# Compiled server output
+server/dist/

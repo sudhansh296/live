@@ -1,0 +1,10 @@
+const path = require('path');
+
+// Paths used by sequelize-cli. Run it through the npm db:* scripts: they load the TypeScript
+// config and migrations with tsx, so tsx (a devDependency) must be installed wherever you migrate.
+module.exports = {
+  config: path.resolve('src', 'db', 'config.ts'),
+  'migrations-path': path.resolve('src', 'db', 'migrations'),
+  'seeders-path': path.resolve('src', 'db', 'seeders'),
+  'models-path': path.resolve('src', 'models'),
+};

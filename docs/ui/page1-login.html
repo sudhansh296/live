@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hivo Live - Page 1 UI mockup</title>
+<style>
+  :root { --red:#FF0000; --bg:#0F0F0F; --card:#1A1A1A; --card2:#222222; --muted:#AAAAAA; --green:#4CAF50; }
+  * { box-sizing: border-box; }
+  body { margin:0; padding:32px 16px 48px; background:#050505; color:#fff; font-family: Roboto, "Segoe UI", system-ui, sans-serif; }
+  h1 { text-align:center; font-size:20px; margin:0 0 4px; }
+  .sub { text-align:center; color:var(--muted); font-size:13px; margin-bottom:28px; }
+  .row { display:flex; flex-wrap:wrap; gap:28px; justify-content:center; }
+  figure { margin:0; text-align:center; }
+  figcaption { margin-top:10px; font-size:13px; color:var(--muted); }
+  .phone { width:290px; height:600px; border-radius:34px; border:6px solid #000; background:var(--bg); position:relative; overflow:hidden; box-shadow:0 0 0 1px #2a2a2a, 0 18px 40px rgba(0,0,0,.6); text-align:left; }
+  .status { display:flex; justify-content:space-between; padding:10px 20px 0; font-size:11px; color:#ddd; }
+  .pad { padding:0 22px; }
+  .logo { width:84px; height:84px; border-radius:22px; background:var(--red); display:flex; align-items:center; justify-content:center; margin:0 auto; }
+  h2 { margin:0; }
+  .title { font-size:28px; font-weight:800; text-align:center; margin-top:14px; }
+  .tag { text-align:center; color:var(--muted); font-size:14px; margin-top:4px; }
+  .hero { position:relative; height:150px; margin:22px 0 0; }
+  .room { position:absolute; width:96px; height:128px; border-radius:14px; padding:8px; font-size:10px; display:flex; flex-direction:column; justify-content:space-between; box-shadow:0 8px 18px rgba(0,0,0,.5); }
+  .room b { align-self:flex-start; background:var(--red); border-radius:6px; padding:2px 6px; font-size:9px; }
+  .r1 { left:22px; top:14px; transform:rotate(-8deg); background:linear-gradient(160deg,#6d1a1a,#241010); }
+  .r2 { left:92px; top:0; transform:rotate(0); background:linear-gradient(160deg,#a01212,#2a0d0d); z-index:2; }
+  .r3 { left:162px; top:14px; transform:rotate(8deg); background:linear-gradient(160deg,#4a1a3a,#170d14); }
+  .btns { position:absolute; left:22px; right:22px; bottom:26px; display:flex; flex-direction:column; gap:10px; }
+  .btn { height:48px; border-radius:12px; display:flex; align-items:center; justify-content:center; gap:10px; font-weight:600; font-size:15px; }
+  .google { background:#fff; color:#1f1f1f; }
+  .g { font-weight:800; color:#4285F4; font-size:17px; }
+  .primary { background:var(--red); color:#fff; }
+  .primary.off { background:#3a1414; color:#8a6a6a; }
+  .fine { color:#777; font-size:10.5px; text-align:center; line-height:1.45; margin-top:2px; }
+  .fine u { color:#aaa; }
+  .back { font-size:22px; padding:14px 18px 0; color:#fff; }
+  h3 { font-size:24px; margin:18px 0 6px; }
+  .lead { color:var(--muted); font-size:13.5px; line-height:1.5; margin:0 0 22px; }
+  .phonefield { display:flex; gap:8px; }
+  .chip { background:var(--card); border-radius:12px; height:52px; padding:0 12px; display:flex; align-items:center; gap:6px; font-size:15px; }
+  .input { flex:1; background:var(--card); border:1.5px solid var(--red); border-radius:12px; height:52px; padding:0 14px; display:flex; align-items:center; font-size:17px; letter-spacing:.5px; }
+  .caret { display:inline-block; width:1.5px; height:20px; background:#fff; margin-left:2px; }
+  .help { color:#777; font-size:11.5px; margin-top:10px; line-height:1.4; }
+  .otp { display:flex; gap:8px; justify-content:space-between; margin:6px 0 14px; }
+  .box { width:38px; height:50px; background:var(--card); border-radius:10px; border:1.5px solid #2c2c2c; display:flex; align-items:center; justify-content:center; font-size:22px; font-weight:700; }
+  .box.act { border-color:var(--red); }
+  .box.bad { border-color:#ff5252; color:#ff8a8a; }
+  .timer { color:var(--muted); font-size:13px; }
+  .err { color:#ff6b6b; font-size:13px; margin:2px 0 10px; }
+  .link { color:#fff; text-decoration:underline; font-size:13px; }
+  .note { max-width:980px; margin:34px auto 0; color:var(--muted); font-size:13px; line-height:1.7; }
+  .note b { color:#fff; }
+  .sw { display:inline-block; width:11px; height:11px; border-radius:3px; vertical-align:-1px; margin-right:4px; }
+</style>
+</head>
+<body>
+<h1>Hivo Live &mdash; Page 1: Welcome &amp; Login</h1>
+<div class="sub">Design preview only (HTML). The real screens will be built in Jetpack Compose with the same colours and layout.</div>
+
+<div class="row">
+
+  <figure>
+    <div class="phone">
+      <div class="status"><span>9:41</span><span>5G &nbsp;100%</span></div>
+      <div class="pad" style="margin-top:34px">
+        <div class="logo"><svg width="46" height="46" viewBox="0 0 108 108"><path fill="#fff" d="M32,28h12v20h20v-20h12v52h-12v-20h-20v20h-12z"/></svg></div>
+        <div class="title">Hivo Live</div>
+        <div class="tag">Go live. Meet the world.</div>
+      </div>
+      <div class="hero">
+        <div class="room r1"><b>LIVE</b><span>&#9679; 1.2k</span></div>
+        <div class="room r3"><b>LIVE</b><span>&#9679; 864</span></div>
+        <div class="room r2"><b>LIVE</b><span>&#9679; 3.4k</span></div>
+      </div>
+      <div class="btns">
+        <div class="btn google"><span class="g">G</span> Continue with Google</div>
+        <div class="btn primary">Continue with phone</div>
+        <div class="fine">By continuing you confirm you are 18 or older and accept our <u>Terms</u> and <u>Privacy Policy</u>.</div>
+      </div>
+    </div>
+    <figcaption>1. Welcome</figcaption>
+  </figure>
+
+  <figure>
+    <div class="phone">
+      <div class="status"><span>9:41</span><span>5G &nbsp;100%</span></div>
+      <div class="back">&larr;</div>
+      <div class="pad">
+        <h3>Your phone number</h3>
+        <p class="lead">We will text you a 6-digit code to confirm it is you.</p>
+        <div class="phonefield">
+          <div class="chip">&#127470;&#127475; +91 &#9662;</div>
+          <div class="input">98765 43210<span class="caret"></span></div>
+        </div>
+        <div class="help">Message and data rates may apply. We never show your number to other users.</div>
+      </div>
+      <div class="btns"><div class="btn primary">Send code</div></div>
+    </div>
+    <figcaption>2. Phone number</figcaption>
+  </figure>
+
+  <figure>
+    <div class="phone">
+      <div class="status"><span>9:41</span><span>5G &nbsp;100%</span></div>
+      <div class="back">&larr;</div>
+      <div class="pad">
+        <h3>Enter the code</h3>
+        <p class="lead">Sent to +91 98&bull;&bull;&bull;&bull;&bull;210 &nbsp;<span class="link">Change</span></p>
+        <div class="otp">
+          <div class="box">4</div><div class="box">8</div><div class="box">2</div>
+          <div class="box act"><span class="caret"></span></div><div class="box"></div><div class="box"></div>
+        </div>
+        <div class="timer">Resend code in 0:27</div>
+      </div>
+      <div class="btns"><div class="btn primary off">Verify</div></div>
+    </div>
+    <figcaption>3. Verification code</figcaption>
+  </figure>
+
+  <figure>
+    <div class="phone">
+      <div class="status"><span>9:41</span><span>5G &nbsp;100%</span></div>
+      <div class="back">&larr;</div>
+      <div class="pad">
+        <h3>Enter the code</h3>
+        <p class="lead">Sent to +91 98&bull;&bull;&bull;&bull;&bull;210 &nbsp;<span class="link">Change</span></p>
+        <div class="otp">
+          <div class="box bad">4</div><div class="box bad">8</div><div class="box bad">2</div>
+          <div class="box bad">9</div><div class="box bad">1</div><div class="box bad">3</div>
+        </div>
+        <div class="err">Wrong code. 2 attempts left.</div>
+        <div class="timer"><span class="link">Resend code</span></div>
+      </div>
+      <div class="btns"><div class="btn primary">Verify</div></div>
+    </div>
+    <figcaption>4. Wrong code (error state)</figcaption>
+  </figure>
+
+</div>
+
+<div class="note">
+  <b>Colours (same as YT Booster):</b>
+  <span class="sw" style="background:#FF0000"></span>red #FF0000 &nbsp;
+  <span class="sw" style="background:#0F0F0F;border:1px solid #444"></span>background #0F0F0F &nbsp;
+  <span class="sw" style="background:#1A1A1A;border:1px solid #444"></span>card #1A1A1A<br>
+  <b>Also handled (not drawn):</b> invalid phone number, no internet, too many attempts (temporary lock message), Google sign-in cancelled, account suspended.<br>
+  <b>Notes:</b> the Google button here is a placeholder; the real one uses Google&rsquo;s official button style. The hero cards are decorative and use no server data. Country list and flags are built into the app (they are not sensitive); everything about the user comes from the server after login.
+</div>
+</body>
+</html>

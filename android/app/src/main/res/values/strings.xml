@@ -1,0 +1,84 @@
+<resources>
+    <string name="app_name">Hivo Live</string>
+    <string name="tagline">Go live. Meet the world.</string>
+
+    <!-- Welcome -->
+    <string name="continue_google">Continue with Google</string>
+    <string name="continue_phone">Continue with phone</string>
+    <string name="terms_checkbox">I am 18+ and I agree to the Terms of Service and Privacy Policy</string>
+    <string name="terms_required">Please tick this box to continue.</string>
+
+    <!-- Phone number -->
+    <string name="phone_title">Your phone number</string>
+    <string name="phone_lead">We will text you a 6-digit code to confirm it is you.</string>
+    <string name="phone_hint">Phone number</string>
+    <string name="phone_help">Message and data rates may apply. We never show your number to other users.</string>
+    <string name="send_code">Send code</string>
+    <string name="choose_country">Choose country</string>
+    <string name="search_country">Search country or code</string>
+
+    <!-- Verification code -->
+    <string name="otp_title">Enter the code</string>
+    <string name="otp_sent_to">Sent to %1$s</string>
+    <string name="change">Change</string>
+    <string name="resend_in">Resend code in %1$s</string>
+    <string name="resend">Resend code</string>
+    <string name="verify">Verify</string>
+    <string name="otp_wrong">Wrong code. %1$d attempts left.</string>
+    <string name="otp_locked">Too many wrong codes. Request a new one.</string>
+
+    <!-- Errors -->
+    <string name="err_network">No internet connection. Check your network and try again.</string>
+    <string name="err_invalid_phone">Enter a valid phone number.</string>
+    <string name="err_too_many">Too many attempts. Please try again later.</string>
+    <string name="err_not_configured">Login is not set up yet. Add the Firebase configuration and rebuild the app.</string>
+    <string name="err_no_google_account">No Google account found on this device.</string>
+    <string name="err_code_expired">The code has expired. Request a new one.</string>
+    <string name="err_suspended">This account is not available.</string>
+    <string name="err_server">Our servers are busy. Please try again in a moment.</string>
+    <string name="err_generic">Something went wrong. Please try again.</string>
+
+    <!-- Profile setup -->
+    <string name="profile_title">Set up your profile</string>
+    <string name="profile_lead">This is how other people see you on Hivo Live.</string>
+    <string name="profile_photo_change">Change profile photo</string>
+    <string name="profile_name">Display name</string>
+    <string name="profile_name_hint">Your name</string>
+    <string name="profile_username">Username</string>
+    <string name="profile_username_hint">username</string>
+    <string name="profile_birth">Date of birth</string>
+    <string name="profile_birth_hint">DD / MM / YYYY</string>
+    <string name="profile_birth_note">You must be 18+. Your birthday is never shown to others.</string>
+    <string name="profile_country">Country</string>
+    <string name="profile_continue">Continue</string>
+    <string name="username_rules">3–20 characters: letters, numbers, . or _</string>
+    <string name="username_bad_shape">Use letters, numbers, . or _ . It cannot start or end with . or _ and cannot have two dots in a row.</string>
+    <string name="username_checking">Checking…</string>
+    <string name="username_available">@%1$s is available</string>
+    <string name="username_taken">@%1$s is already taken. Try another one.</string>
+    <string name="username_reserved">This username is not available.</string>
+    <string name="username_unreachable">Could not check right now. We will check again when you continue.</string>
+    <string name="photo_take">Take a photo</string>
+    <string name="photo_choose">Choose from gallery</string>
+    <string name="photo_remove">Remove photo</string>
+    <string name="crop_hint">Drag and pinch to choose how your photo looks</string>
+    <string name="crop_done">Done</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="age_blocked_title">You can\'t use Hivo Live yet</string>
+    <string name="age_blocked_body">Hivo Live is only for people who are 18 or older, so this account can\'t be used.</string>
+    <string name="err_display_name">Enter a name with 2 to 30 characters.</string>
+    <string name="err_birth_date">Pick a valid date of birth.</string>
+    <string name="err_country">Choose your country.</string>
+    <string name="err_photo_too_large">That photo is too large. Choose a smaller one.</string>
+    <string name="err_photo_invalid">We could not read that photo. Try another one.</string>
+    <string name="err_photo_unsupported">Only JPEG, PNG or WebP photos can be used.</string>
+    <string name="err_no_camera">No camera app was found on this device.</string>
+
+    <!-- Signed in (temporary screen until Home exists) -->
+    <string name="signed_in_title">You are in!</string>
+    <string name="signed_in_next">Next: set up your profile.</string>
+    <string name="signed_in_ready">Your profile is ready.</string>
+    <string name="sign_out">Sign out</string>
+    <string name="back">Back</string>
+</resources>

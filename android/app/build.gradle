@@ -1,0 +1,96 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'org.jetbrains.kotlin.plugin.compose'
+    id 'org.jetbrains.kotlin.plugin.serialization'
+}
+
+// Firebase is configured by app/google-services.json (git-ignored). Until that file exists the app still
+// builds and runs, and the login screens show "Login is not set up yet".
+if (file('google-services.json').exists()) {
+    apply plugin: 'com.google.gms.google-services'
+}
+
+android {
+    namespace 'com.coderlobby.hivo'
+    compileSdk 36
+
+    defaultConfig {
+        applicationId 'com.coderlobby.hivo'
+        minSdk 24
+        targetSdk 36
+        versionCode 1
+        versionName '0.1.0'
+    }
+
+    buildTypes {
+        debug {
+            // Debug builds talk to the dev server on this PC through `adb reverse tcp:4000 tcp:4000`
+            // (works for both a USB phone and the emulator). Override with -PapiBaseUrl=... if needed.
+            buildConfigField 'String', 'API_BASE_URL', "\"${project.findProperty('apiBaseUrl') ?: 'http://127.0.0.1:4000/'}\""
+            // Emulators without a current Play Store cannot pass Firebase's app check. Build with
+            // -PdisableAppVerification=true to skip it; Firebase only honours this for its fictional test numbers.
+            buildConfigField 'boolean', 'DISABLE_APP_VERIFICATION', "${project.findProperty('disableAppVerification') ?: 'false'}"
+        }
+        release {
+            // Placeholder until the production domain exists. Release builds only allow https.
+            buildConfigField 'String', 'API_BASE_URL', '"https://api.example.invalid/"'
+            buildConfigField 'boolean', 'DISABLE_APP_VERIFICATION', 'false'
+            // Signing is added later with a keystore kept OUTSIDE the repo (never commit passwords).
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    buildFeatures {
+        compose true
+        buildConfig true
+    }
+}
+
+kotlin {
+    compilerOptions {
+        jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17)
+    }
+}
+
+dependencies {
+    implementation 'androidx.core:core-ktx:1.15.0'
+    implementation 'androidx.activity:activity-compose:1.10.0'
+    // Newer Compose/lifecycle/OkHttp need AGP 9.1 + compileSdk 37; these are the newest that build with AGP 8.13 + compileSdk 36.
+    implementation platform('androidx.compose:compose-bom:2025.10.01')
+    implementation 'androidx.compose.ui:ui'
+    implementation 'androidx.compose.material3:material3'
+    implementation 'androidx.compose.ui:ui-tooling-preview'
+    debugImplementation 'androidx.compose.ui:ui-tooling'
+
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-compose:2.9.4'
+    implementation 'androidx.lifecycle:lifecycle-runtime-compose:2.9.4'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.10.2'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.10.2'
+
+    // Networking + JSON
+    implementation 'com.squareup.okhttp3:okhttp:5.3.2'
+    implementation 'org.jetbrains.kotlinx:kotlinx-serialization-json:1.11.0'
+
+    // Login: Firebase Auth (phone OTP) + Google sign-in through Credential Manager
+    implementation platform('com.google.firebase:firebase-bom:34.19.0')
+    implementation 'com.google.firebase:firebase-auth'
+    implementation 'androidx.credentials:credentials:1.6.0'
+    implementation 'androidx.credentials:credentials-play-services-auth:1.6.0'
+    implementation 'com.google.android.libraries.identity.googleid:googleid:1.2.1'
+
+    // Reads the camera's rotation tag so profile photos are not sent sideways
+    implementation 'androidx.exifinterface:exifinterface:1.4.2'
+
+    // Phone number parsing, validation and the country list
+    implementation 'io.michaelrocks:libphonenumber-android:9.0.38'
+
+    testImplementation 'junit:junit:4.13.2'
+}

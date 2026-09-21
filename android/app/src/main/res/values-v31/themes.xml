@@ -1,0 +1,11 @@
+<resources>
+    <!-- Android 12+ system splash: dark background with the red-tile "H" instead of the default white screen. -->
+    <style name="Theme.HivoLive" parent="android:Theme.Material.NoActionBar">
+        <item name="android:windowBackground">#0F0F0F</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowSplashScreenBackground">#0F0F0F</item>
+        <item name="android:windowSplashScreenAnimatedIcon">@drawable/ic_hivo_h</item>
+        <item name="android:windowSplashScreenIconBackgroundColor">#FF0000</item>
+    </style>
+</resources>

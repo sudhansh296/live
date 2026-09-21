@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hivo Live - Page 2 UI mockup</title>
+<style>
+  :root { --red:#FF0000; --bg:#0F0F0F; --card:#1A1A1A; --muted:#AAAAAA; --green:#4CAF50; --bad:#FF6B6B; }
+  * { box-sizing: border-box; }
+  body { margin:0; padding:32px 16px 48px; background:#050505; color:#fff; font-family: Roboto, "Segoe UI", system-ui, sans-serif; }
+  h1 { text-align:center; font-size:20px; margin:0 0 4px; }
+  .sub { text-align:center; color:var(--muted); font-size:13px; margin-bottom:28px; }
+  .row { display:flex; flex-wrap:wrap; gap:28px; justify-content:center; }
+  figure { margin:0; text-align:center; }
+  figcaption { margin-top:10px; font-size:13px; color:var(--muted); }
+  .phone { width:290px; height:600px; border-radius:34px; border:6px solid #000; background:var(--bg); position:relative; overflow:hidden; box-shadow:0 0 0 1px #2a2a2a, 0 18px 40px rgba(0,0,0,.6); text-align:left; }
+  .status { display:flex; justify-content:space-between; padding:10px 20px 0; font-size:11px; color:#ddd; }
+  .pad { padding:0 20px; }
+  h3 { font-size:22px; margin:22px 0 4px; }
+  .lead { color:var(--muted); font-size:12.5px; line-height:1.45; margin:0 0 14px; }
+  .avatarwrap { display:flex; justify-content:center; margin:6px 0 14px; }
+  .avatar { width:84px; height:84px; border-radius:50%; background:linear-gradient(160deg,#a01212,#2a0d0d); display:flex; align-items:center; justify-content:center; font-size:34px; font-weight:800; position:relative; }
+  .avatar .cam { position:absolute; right:-2px; bottom:-2px; width:28px; height:28px; border-radius:50%; background:var(--red); border:3px solid var(--bg); display:flex; align-items:center; justify-content:center; font-size:13px; }
+  label { display:block; font-size:11.5px; color:var(--muted); margin:10px 0 5px; }
+  .field { background:var(--card); border:1.5px solid #2c2c2c; border-radius:12px; height:46px; padding:0 13px; display:flex; align-items:center; justify-content:space-between; font-size:15px; }
+  .field.act { border-color:var(--red); }
+  .field.ok { border-color:var(--green); }
+  .field.bad { border-color:var(--bad); }
+  .field .ph { color:#666; }
+  .count { color:#777; font-size:11px; }
+  .msg { font-size:11.5px; margin-top:5px; line-height:1.35; }
+  .msg.g { color:var(--green); } .msg.r { color:var(--bad); } .msg.m { color:#777; }
+  .chip { display:inline-flex; align-items:center; gap:6px; }
+  .btn { position:absolute; left:20px; right:20px; bottom:22px; height:48px; border-radius:12px; display:flex; align-items:center; justify-content:center; font-weight:600; font-size:15px; background:var(--red); }
+  .btn.off { background:#3a1414; color:#8a6a6a; }
+  .sheetbg { position:absolute; inset:0; background:rgba(0,0,0,.6); }
+  .sheet { position:absolute; left:0; right:0; bottom:0; background:#1f1f1f; border-radius:20px 20px 0 0; padding:14px 20px 24px; }
+  .grab { width:38px; height:4px; background:#444; border-radius:2px; margin:0 auto 14px; }
+  .opt { display:flex; align-items:center; gap:14px; padding:13px 2px; font-size:15px; border-bottom:1px solid #2a2a2a; }
+  .opt:last-child { border-bottom:none; }
+  .opt.red { color:var(--bad); }
+  .note { max-width:980px; margin:34px auto 0; color:var(--muted); font-size:13px; line-height:1.7; }
+  .note b { color:#fff; }
+</style>
+</head>
+<body>
+<h1>Hivo Live &mdash; Page 2: Profile setup</h1>
+<div class="sub">Design preview only (HTML). Shown right after the first login. The real screens will be built in Jetpack Compose.</div>
+
+<div class="row">
+
+  <figure>
+    <div class="phone">
+      <div class="status"><span>9:41</span><span>5G &nbsp;100%</span></div>
+      <div class="pad">
+        <h3>Set up your profile</h3>
+        <p class="lead">This is how other people see you on Hivo Live.</p>
+        <div class="avatarwrap"><div class="avatar">?<div class="cam">&#128247;</div></div></div>
+        <label>Display name</label>
+        <div class="field act"><span class="ph">Your name</span><span class="count">0/30</span></div>
+        <label>Username</label>
+        <div class="field"><span><span style="color:#888">@</span> <span class="ph">username</span></span></div>
+        <div class="msg m">3&ndash;20 characters: letters, numbers, . or _</div>
+        <label>Date of birth</label>
+        <div class="field"><span class="ph">DD / MM / YYYY</span><span>&#128197;</span></div>
+        <label>Country</label>
+        <div class="field"><span class="chip">&#127470;&#127475; India</span><span style="color:#888">&#9662;</span></div>
+      </div>
+      <div class="btn off">Continue</div>
+    </div>
+    <figcaption>1. Empty form</figcaption>
+  </figure>
+
+  <figure>
+    <div class="phone">
+      <div class="status"><span>9:41</span><span>5G &nbsp;100%</span></div>
+      <div class="pad">
+        <h3>Set up your profile</h3>
+        <p class="lead">This is how other people see you on Hivo Live.</p>
+        <div class="avatarwrap"><div class="avatar">S<div class="cam">&#128247;</div></div></div>
+        <label>Display name</label>
+        <div class="field"><span>Sudhanshu</span><span class="count">9/30</span></div>
+        <label>Username</label>
+        <div class="field ok"><span><span style="color:#888">@</span> sudha_live</span><span style="color:var(--green)">&#10003;</span></div>
+        <div class="msg g">@sudha_live is available</div>
+        <label>Date of birth</label>
+        <div class="field"><span>12 / 05 / 2001</span><span>&#128197;</span></div>
+        <div class="msg m">You must be 18+. Your birthday is never shown to others.</div>
+        <label>Country</label>
+        <div class="field"><span class="chip">&#127470;&#127475; India</span><span style="color:#888">&#9662;</span></div>
+      </div>
+      <div class="btn">Continue</div>
+    </div>
+    <figcaption>2. Filled and valid</figcaption>
+  </figure>
+
+  <figure>
+    <div class="phone">
+      <div class="status"><span>9:41</span><span>5G &nbsp;100%</span></div>
+      <div class="pad">
+        <h3>Set up your profile</h3>
+        <p class="lead">This is how other people see you on Hivo Live.</p>
+        <div class="avatarwrap"><div class="avatar">S<div class="cam">&#128247;</div></div></div>
+        <label>Display name</label>
+        <div class="field"><span>Sudhanshu</span><span class="count">9/30</span></div>
+        <label>Username</label>
+        <div class="field bad"><span><span style="color:#888">@</span> sudha</span><span style="color:var(--bad)">&#10005;</span></div>
+        <div class="msg r">@sudha is already taken. Try @sudha_live or @sudha2026</div>
+        <label>Date of birth</label>
+        <div class="field bad"><span>05 / 03 / 2011</span><span>&#128197;</span></div>
+        <div class="msg r">You must be 18 or older to use Hivo Live.</div>
+        <label>Country</label>
+        <div class="field"><span class="chip">&#127470;&#127475; India</span><span style="color:#888">&#9662;</span></div>
+      </div>
+      <div class="btn off">Continue</div>
+    </div>
+    <figcaption>3. Errors (name taken, under 18)</figcaption>
+  </figure>
+
+  <figure>
+    <div class="phone">
+      <div class="status"><span>9:41</span><span>5G &nbsp;100%</span></div>
+      <div class="pad">
+        <h3>Set up your profile</h3>
+        <p class="lead">This is how other people see you on Hivo Live.</p>
+        <div class="avatarwrap"><div class="avatar">S<div class="cam">&#128247;</div></div></div>
+        <label>Display name</label>
+        <div class="field"><span>Sudhanshu</span><span class="count">9/30</span></div>
+      </div>
+      <div class="sheetbg"></div>
+      <div class="sheet">
+        <div class="grab"></div>
+        <div class="opt">&#128247;&nbsp; Take a photo</div>
+        <div class="opt">&#128444;&nbsp; Choose from gallery</div>
+        <div class="opt red">&#128465;&nbsp; Remove photo</div>
+      </div>
+    </div>
+    <figcaption>4. Tap the avatar</figcaption>
+  </figure>
+
+</div>
+
+<div class="note">
+  <b>What is asked:</b> display name (2&ndash;30 characters), unique @username, date of birth (18+ is checked by the server, not the app), country (guessed from your phone, you can change it), and an optional photo.<br>
+  <b>Privacy:</b> the birthday is never sent to other users. Photos are resized on the server and location data inside the photo is removed.<br>
+  <b>Under 18:</b> the server refuses and does not let the same account retry with a different date.<br>
+  <b>Also handled (not drawn):</b> name too short, unsupported photo type, photo too large, no internet, and username checked live while typing (with a short delay so it is not spammed).
+</div>
+</body>
+</html>
